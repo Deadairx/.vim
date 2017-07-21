@@ -1,26 +1,26 @@
 call plug#begin('~/.vim/plugged')
-Plug 'git@github.com:itchyny/lightline.vim.git'
+Plug 'itchyny/lightline.vim.git'
 
-Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
-Plug 'git@github.com:tpope/vim-sleuth.git'
-Plug 'git@github.com:scrooloose/syntastic.git'
-Plug 'git@github.com:kshenoy/vim-signature.git'
-Plug 'git@github.com:airblade/vim-gitgutter.git'
+Plug 'ctrlpvim/ctrlp.vim.git'
+Plug 'tpope/vim-sleuth.git'
+Plug 'scrooloose/syntastic.git'
+Plug 'kshenoy/vim-signature.git'
+Plug 'airblade/vim-gitgutter.git'
 
-Plug 'git@github.com:tpope/vim-dispatch.git', { 'for': 'cs' }
-Plug 'git@github.com:OrangeT/vim-csharp.git', { 'for': 'cs' }
-Plug 'git@github.com:PProvost/vim-ps1.git',   { 'for': 'ps1' }
-Plug 'git@github.com:chrisbra/csv.vim.git',   { 'for': 'csv' }
-Plug 'git@github.com:keith/swift.vim.git',    { 'for': 'swift' }
-Plug 'git@github.com:rust-lang/rust.vim.git', { 'for': 'rust'  }
-Plug 'git@github.com:cespare/vim-toml.git',   { 'for': 'toml'  }
-Plug 'git@github.com:etdev/vim-hexcolor.git', { 'for': 'css' }
-Plug 'git@github.com:kurocode25/mdforvim.git', { 'for': 'markdown' }
-Plug 'git@github.com:myhere/vim-nodejs-complete.git', { 'for': 'javascript' }
+Plug 'tpope/vim-dispatch.git', { 'for': 'cs' }
+Plug 'OrangeT/vim-csharp.git', { 'for': 'cs' }
+Plug 'PProvost/vim-ps1.git',   { 'for': 'ps1' }
+Plug 'chrisbra/csv.vim.git',   { 'for': 'csv' }
+Plug 'keith/swift.vim.git',    { 'for': 'swift' }
+Plug 'rust-lang/rust.vim.git', { 'for': 'rust'  }
+Plug 'cespare/vim-toml.git',   { 'for': 'toml'  }
+Plug 'etdev/vim-hexcolor.git', { 'for': 'css' }
+Plug 'kurocode25/mdforvim.git', { 'for': 'markdown' }
+Plug 'myhere/vim-nodejs-complete.git', { 'for': 'javascript' }
 
-Plug 'git@github.com:morhetz/gruvbox.git'
+Plug 'morhetz/gruvbox.git'
 
-Plug 'git@github.com:bling/vim-bufferline.git'
+Plug 'bling/vim-bufferline.git'
 call plug#end()
 
 scriptencoding utf-8
@@ -46,7 +46,7 @@ set smartcase
 set incsearch
 set splitright
 set splitbelow
-set cursorline
+set cursorline 
 set fillchars=vert:│,fold:─
 set wildmenu
 
@@ -164,3 +164,9 @@ endif
 colorscheme darkblue
 set background=dark
 set tabstop=4
+
+" Cursor Block for cygwin
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
