@@ -1,26 +1,26 @@
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim.git'
+Plug 'itchyny/lightline.vim'
 
-Plug 'ctrlpvim/ctrlp.vim.git'
-Plug 'tpope/vim-sleuth.git'
-Plug 'scrooloose/syntastic.git'
-Plug 'kshenoy/vim-signature.git'
-Plug 'airblade/vim-gitgutter.git'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'scrooloose/syntastic'
+Plug 'kshenoy/vim-signature'
+Plug 'airblade/vimgutter'
 
-Plug 'tpope/vim-dispatch.git', { 'for': 'cs' }
-Plug 'OrangeT/vim-csharp.git', { 'for': 'cs' }
-Plug 'PProvost/vim-ps1.git',   { 'for': 'ps1' }
-Plug 'chrisbra/csv.vim.git',   { 'for': 'csv' }
-Plug 'keith/swift.vim.git',    { 'for': 'swift' }
-Plug 'rust-lang/rust.vim.git', { 'for': 'rust'  }
-Plug 'cespare/vim-toml.git',   { 'for': 'toml'  }
-Plug 'etdev/vim-hexcolor.git', { 'for': 'css' }
-Plug 'kurocode25/mdforvim.git', { 'for': 'markdown' }
-Plug 'myhere/vim-nodejs-complete.git', { 'for': 'javascript' }
+Plug 'tpope/vim-dispatch', { 'for': 'cs' }
+Plug 'OrangeT/vim-csharp', { 'for': 'cs' }
+Plug 'PProvost/vim-ps1',   { 'for': 'ps1' }
+Plug 'chrisbra/csv.vim',   { 'for': 'csv' }
+Plug 'keith/swift.vim',    { 'for': 'swift' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust'  }
+Plug 'cespare/vim-toml',   { 'for': 'toml'  }
+Plug 'etdev/vim-hexcolor', { 'for': 'css' }
+Plug 'kurocode25/mdforvim', { 'for': 'markdown' }
+Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 
-Plug 'morhetz/gruvbox.git'
+Plug 'morhetz/gruvbox'
 
-Plug 'bling/vim-bufferline.git'
+Plug 'bling/vim-bufferline'
 call plug#end()
 
 scriptencoding utf-8
