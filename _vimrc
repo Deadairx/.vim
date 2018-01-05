@@ -21,6 +21,8 @@ Plug 'etdev/vim-hexcolor', { 'for': 'css' }
 Plug 'kurocode25/mdforvim', { 'for': 'markdown' }
 Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 
+Plug 'Yggdroot/LeaderF' "Fuzzy Finder
+
 " Colors
 Plug 'altercation/vim-colors-solarized' "Colortheme
 Plug 'morhetz/gruvbox'
@@ -171,3 +173,18 @@ let g:lightline = { 'colorscheme': 'solarized',} "must come after theme options.
 " SQL Server
 let g:dbext_default_profile_local = 'type=SQLSRV:user=vim:passwd=qjkCTW4!:host=localhost:dbname=vimDB'
 "}}}
+" vsvim {{{
+:nmap <leader>rt :vsc TestExplorer.DebugAllTestsInContext<CR>
+:map <leader>cc :vsc Edit.CommentSelection<CR>
+:map <leader>cu :vsc Edit.UncommentSelection<CR>
+:nmap <leader>far :vsc Edit.FindAllReferences<CR>
+:nmap <leader>vim :vsc Tools.ExternalCommand1<CR> "Open in gvim - http://vim.wikia.com/wiki/Integrate_gvim_with_Visual_Studio
+:nmap <leader>sd :vsc Debug.StopDebugging<CR>
+:nmap <leader>bp :vsc Debug.ToggleBreakpoint<CR>
+:nmap <leader>in :vsc Test.UseCodedUITestBuilder<CR>
+:nmap <leader>mo :vsc Edit.CollapsetoDefinitions<CR>
+:nmap <leader>gd :vsc Edit.PeekDefinition<CR>
+:map <leader>cl :vsc CodeLens.LogAuthorsDoubleClick<CR>
+:map <leader>gl :vsc File.GetLatestSolutionFiles<CR>
+:map <leader>kto :vsc Window.KeepTabOpen<CR>
+" }}}
