@@ -8,23 +8,23 @@ Plug 'scrooloose/syntastic'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'nathanaelkane/vim-indent-guides' "Indent Guidelines
+
 Plug 'vim-scripts/dbext.vim' "SQL Connection
 
 Plug 'tpope/vim-dispatch', { 'for': 'cs' }
 Plug 'OrangeT/vim-csharp', { 'for': 'cs' }
 Plug 'PProvost/vim-ps1',   { 'for': 'ps1' }
 Plug 'chrisbra/csv.vim',   { 'for': 'csv' }
-Plug 'keith/swift.vim',    { 'for': 'swift' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust'  }
-Plug 'cespare/vim-toml',   { 'for': 'toml'  }
 Plug 'etdev/vim-hexcolor', { 'for': 'css' }
 Plug 'kurocode25/mdforvim', { 'for': 'markdown' }
 Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 
-Plug 'Yggdroot/LeaderF' "Fuzzy Finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "Fuzzy Finder
 
 " Colors
 Plug 'altercation/vim-colors-solarized' "Colortheme
+Plug 'Heorhiy/VisualStudioDark.vim'
 Plug 'morhetz/gruvbox'
 
 Plug 'bling/vim-bufferline' "Show open buffers
@@ -45,7 +45,7 @@ set title
 set listchars=trail:·,tab:»\ ,extends:>,precedes:\<
 set nowrap
 set nu
-set rnu
+set rnu "reletive line number
 set laststatus=2
 set backspace=indent,eol,start
 set ignorecase
@@ -64,6 +64,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+set lines=50 columns=120
+
+" Guides
+set colorcolumn=120
+highlight ColorColumn ctermbg=DarkCyan
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Folding
 if @% =~# 'vimrc'
@@ -165,7 +171,8 @@ endfunction
 "}}}
 " Colorscheme: {{{
 "colorscheme darkblue
-colorscheme solarized
+"colorscheme solarized
+colorscheme VisualStudioDark
 let g:solarized_italic=0
 let g:lightline = { 'colorscheme': 'solarized',} "must come after theme options...no idea why...
 "}}}
