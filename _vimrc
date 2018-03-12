@@ -64,7 +64,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-set lines=50 columns=120
+set lines=50 columns=120    " TODO: Change to gVim only
 
 " Guides
 set colorcolumn=120
