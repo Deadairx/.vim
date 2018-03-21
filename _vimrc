@@ -2,6 +2,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim' "Colorful status bar
 
+Plug 'vimwiki/vimwiki' " VimWiki, for takeing notes
+
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'scrooloose/syntastic'
