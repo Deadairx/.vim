@@ -1,18 +1,29 @@
 " Plugins: {{{
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim' "Colorful status bar
+" Colorful status bar
+Plug 'itchyny/lightline.vim' 
 
-Plug 'vimwiki/vimwiki' " VimWiki, for takeing notes
+" VimWiki, for note taking
+Plug 'vimwiki/vimwiki' 
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-sleuth'
+" Syntax Error Debuging
 Plug 'scrooloose/syntastic'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'nathanaelkane/vim-indent-guides' "Indent Guidelines
+" Indent Guidelines
+Plug 'nathanaelkane/vim-indent-guides' 
 
-Plug 'vim-scripts/dbext.vim' "SQL Connection
+" SQL Connection
+Plug 'vim-scripts/dbext.vim' 
+
+" File Explorer
+Plug 'scrooloose/nerdtree' 
+
+" Fuzzy Finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 
 Plug 'tpope/vim-dispatch', { 'for': 'cs' }
 Plug 'OrangeT/vim-csharp', { 'for': 'cs' }
@@ -22,14 +33,13 @@ Plug 'etdev/vim-hexcolor', { 'for': 'css' }
 Plug 'kurocode25/mdforvim', { 'for': 'markdown' }
 Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "Fuzzy Finder
-
-" Colors
-Plug 'altercation/vim-colors-solarized' "Colortheme
+" Color Themes
+Plug 'altercation/vim-colors-solarized' 
 Plug 'Heorhiy/VisualStudioDark.vim'
 Plug 'morhetz/gruvbox'
 
-Plug 'bling/vim-bufferline' "Show open buffers
+" Show open buffers
+Plug 'bling/vim-bufferline' 
 call plug#end()
 
 scriptencoding utf-8
@@ -68,8 +78,15 @@ set shiftwidth=4
 set noexpandtab
 set lines=50 columns=120    " TODO: Change to gVim only
 
+" for VimWiki
+let wiki = {}
+let wiki.path = '~/Google Drive/personalWiki'
+let wiki.nested_syntaxes = {'cs': 'cs'}
+let g:vimwiki_list = [wiki]
+
 " Guides
 set colorcolumn=120
+set colorcolumn=80
 highlight ColorColumn ctermbg=DarkCyan
 let g:indent_guides_enable_on_vim_startup = 1
 
@@ -102,10 +119,17 @@ cabbrev 5s %s
 " Mapings: {{{
 let mapleader = ","
 
+" NERDTree
+map <leader>nt :NERDTree<CR>
+
 " Edit vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
 " Load vimrc
 nmap <leader>vs :so $MYVIMRC<CR>
+
+" ===VimWiki===
+" Create todo item
+map <leader>td I* [ ] 
 
 " }}}
 " Functions: {{{
