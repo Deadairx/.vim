@@ -1,0 +1,17 @@
+" Sets: {{{
+set lines=50 columns=120 "Window Size
+set guioptions+=c "Command like prompts (No GUI alerts)
+
+set go-=m "remove menu bar
+set go-=T "remove toolbar
+set go-=r "remove right-hand scroll
+set go-=L "remove left-hand scroll
+
+"}}}
+" Colorscheme: {{{
+"colorscheme darkblue
+"colorscheme solarized
+colorscheme VisualStudioDark
+let g:solarized_italic=0
+"let g:lightline = { 'colorscheme': 'solarized',} "must come after theme options...no idea why...
+"}}}

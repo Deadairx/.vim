@@ -50,14 +50,14 @@ filetype plugin indent on
 "}}}
 " Sets: {{{
 set nobomb
-set so=5
+set scrolloff=5
 "set lazyredraw
 set synmaxcol=800
 set title
 set listchars=trail:·,tab:»\ ,extends:>,precedes:\<
 set nowrap
-set nu
-set rnu "reletive line number
+set number
+set relativenumber "reletive line number
 set laststatus=2
 set backspace=indent,eol,start
 set ignorecase
@@ -76,13 +76,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-set lines=50 columns=120    " TODO: Change to gVim only
-
-" for VimWiki
-let wiki = {}
-let wiki.path = '~/Google Drive/personalWiki'
-let wiki.nested_syntaxes = {'cs': 'cs'}
-let g:vimwiki_list = [wiki]
 
 " Guides
 set colorcolumn=120
@@ -91,7 +84,7 @@ highlight ColorColumn ctermbg=DarkCyan
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Folding
-if @% =~# 'vimrc'
+if @% =~# 'vimrc' || @% =~# 'gvimrc'
 	set foldmethod=marker
 	set foldlevel=0
 	set foldlevelstart=0
@@ -102,11 +95,6 @@ endif
 
 set foldnestmax=10
 set nofoldenable
-
-set go-=m "remove menu bar
-set go-=T "remove toolbar
-set go-=r "remove right-hand scroll
-set go-=L "remove left-hand scroll
 
 " Cursor Block for cygwin
 let &t_ti.="\e[1 q"
@@ -124,10 +112,16 @@ map <leader>nt :NERDTree<CR>
 
 " Edit vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
+nmap <leader>vg :tabedit $MYGVIMRC<CR>
 " Load vimrc
 nmap <leader>vs :so $MYVIMRC<CR>
 
 " ===VimWiki===
+let wiki = {}
+let wiki.path = '~/Google Drive/personalWiki'
+let wiki.nested_syntaxes = {'cs': 'cs'}
+let g:vimwiki_list = [wiki]
+
 " Create todo item
 map <leader>td I* [ ] 
 
@@ -194,13 +188,6 @@ endfunction
 "  call vimlint#vimlint($MYVIMRC, {'output': 'quickfix'})
 "  source $MYVIMRC
 "endfunction
-"}}}
-" Colorscheme: {{{
-"colorscheme darkblue
-"colorscheme solarized
-colorscheme VisualStudioDark
-let g:solarized_italic=0
-let g:lightline = { 'colorscheme': 'solarized',} "must come after theme options...no idea why...
 "}}}
 " SQL {{{
 " SQL Server
