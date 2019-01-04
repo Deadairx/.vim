@@ -37,6 +37,7 @@ Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 Plug 'altercation/vim-colors-solarized' 
 Plug 'Heorhiy/VisualStudioDark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'dsolstad/vim-wombat256i'
 
 " Show open buffers
 Plug 'bling/vim-bufferline' 
@@ -58,6 +59,7 @@ set listchars=trail:·,tab:»\ ,extends:>,precedes:\<
 set nowrap
 set number
 set relativenumber "reletive line number
+" lightline
 set laststatus=2
 set backspace=indent,eol,start
 set ignorecase
@@ -78,10 +80,10 @@ set shiftwidth=4
 set noexpandtab
 
 " Guides
-set colorcolumn=120
-set colorcolumn=80
-highlight ColorColumn ctermbg=DarkCyan
-let g:indent_guides_enable_on_vim_startup = 1
+"set colorcolumn=120
+"set colorcolumn=80
+"highlight ColorColumn ctermbg=DarkCyan
+"let g:indent_guides_enable_on_vim_startup = 1
 
 " Folding
 if @% =~# 'vimrc' || @% =~# 'gvimrc'
@@ -115,6 +117,7 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <leader>vg :tabedit $MYGVIMRC<CR>
 " Load vimrc
 nmap <leader>vs :so $MYVIMRC<CR>
+nmap <leader>vgs :so $MYGVIMRC<CR>
 
 " ===VimWiki===
 let wiki = {}
@@ -194,11 +197,21 @@ endfunction
 let g:dbext_default_profile_local = 'type=SQLSRV:user=vim:passwd=qjkCTW4!:host=localhost:dbname=vimDB'
 "}}}
 " vsvim {{{
-:nmap <leader>rt :vsc TestExplorer.DebugAllTestsInContext<CR>
+" g commands
+:nnoremap gi :vsc ReSharper.ReSharper_GotoImplementations<CR>
+:nnoremap gr :vsc Edit.FindAllReferences<CR>
+
+:nmap <leader>imp :vsc ReSharper_GenerateImplementations<CR>
+:nmap <leader>tod :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
+:nmap <leader>rt :vsc ReSharper.ReSharper_UnitTestRunFromContext<CR>
+:nmap <leader>rT :vsc Resharper.Resharper_UnitTestRunSolution<CR>
+
+"nmap <leader>rt :vsc TestExplorer.DebugAllTestsInContext<CR>
 :map <leader>cc :vsc Edit.CommentSelection<CR>
 :map <leader>cu :vsc Edit.UncommentSelection<CR>
 :nmap <leader>far :vsc Edit.FindAllReferences<CR>
-:nmap <leader>vim :vsc Tools.ExternalCommand1<CR> "Open in gvim - http://vim.wikia.com/wiki/Integrate_gvim_with_Visual_Studio
+"Open in gvim - http://vim.wikia.com/wiki/Integrate_gvim_with_Visual_Studio
+:nmap <leader>vim :vsc Tools.ExternalCommand1<CR> 
 :nmap <leader>sd :vsc Debug.StopDebugging<CR>
 :nmap <leader>bp :vsc Debug.ToggleBreakpoint<CR>
 :nmap <leader>in :vsc Test.UseCodedUITestBuilder<CR>
@@ -207,4 +220,5 @@ let g:dbext_default_profile_local = 'type=SQLSRV:user=vim:passwd=qjkCTW4!:host=l
 :map <leader>cl :vsc CodeLens.LogAuthorsDoubleClick<CR>
 :map <leader>gl :vsc File.GetLatestSolutionFiles<CR>
 :map <leader>kto :vsc Window.KeepTabOpen<CR>
+:map <leader>se :vsc View.SolutionExplorer<CR>
 " }}}
